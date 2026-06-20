@@ -1,1 +1,2 @@
 # AI-Travel-Planner-for-Students
+AI Travel Planner for Students is an intelligent travel planning platform that generates personalized and affordable travel itineraries using Artificial Intelligence, location services, and budget optimization.
