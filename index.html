@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Travel Planner for Students</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌍 AI Travel Planner for Students</h1>
+
+    <p class="subtitle">
+        Plan Smart • Travel Better • Save Money
+    </p>
+    <form action="/generate" method="POST">
+
+        <label>Destination</label>
+        <input type="text"
+               name="destination"
+               placeholder="Enter destination"
+               required>
+
+        <label>Budget (₹)</label>
+        <input type="number"
+               name="budget"
+               placeholder="Enter budget"
+               required>
+        <label>Number of Days</label>
+        <input type="number"
+               name="days"
+               placeholder="Enter days"
+               required>
+
+        <button type="submit">
+            Generate Itinerary
+        </button>
+
+    </form>
+
+    {% if itinerary %}
+
+    <div class="output">
+
+        <h2>✈ Your Travel Plan</h2>
+
+        <p><strong>Destination:</strong> {{ destination }}</p>
+
+        <p><strong>Budget:</strong> ₹{{ budget }}</p>
+
+        <p><strong>Days:</strong> {{ days }}</p>
+
+        <h3>Suggested Itinerary</h3>
+
+        <ul>
+            {% for item in itinerary %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
